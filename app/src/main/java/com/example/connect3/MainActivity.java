@@ -3,8 +3,37 @@ package com.example.connect3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
+    //0 = Cross 1=Circle
+
+    int activePlayer = 0;
+    int[] gameState = {2,2,2,2,2,2,2,2,2};
+    //2 means unplayed
+    public void dropIn(View view){
+
+        ImageView counter = (ImageView) view;
+
+        System.out.println(counter.getTag().toString());
+
+        counter.setTranslationY(-1000f);
+
+        if(activePlayer == 0) {
+
+            counter.setImageResource(R.drawable.cross);
+
+            activePlayer=1;
+        }
+        else {
+            counter.setImageResource(R.drawable.circle);
+
+            activePlayer=0;
+        }
+        counter.animate().translationYBy(1000f).setDuration(300);
+        //We can add more animation such as Rotation...etc
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
