@@ -72,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
         layout.setVisibility(View.INVISIBLE);
         activePlayer = 0;
 
-        for(int j=0, j<gameState.length,j++){
-            gameState[j]=2;
+       // for(int j=0, j<gameState.length,j++){
+        //    gameState[j]=2;
 
-        }
+        //}
     }
 
     @Override
